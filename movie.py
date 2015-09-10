@@ -1,9 +1,15 @@
+import csv
+
 class Movie:
     def __init__(self,title):
         self.title = title
 
-    def find_movie_ratings(self):
-        return "placeholder"
+    def get_movie_id(self):
+        f = open("movie_data/u.info.csv")
+        csv_f = csv.reader(f)
+
+        
+        self.title
 
 
 

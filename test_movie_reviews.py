@@ -9,11 +9,14 @@ def test_nose_works():
 
 def test_movie_class():
     assert Movie
-    
+    assert Movie.get_movie_id == "T"
+
 
 
 def test_user_class():
+    bob = User(1)
     assert User
+    assert bob.user_id == 2
 
 
 def test_rating_class():
