@@ -9,6 +9,7 @@ def test_nose_works():
 
 def test_movie_class():
     assert Movie
+    
 
 
 def test_user_class():
