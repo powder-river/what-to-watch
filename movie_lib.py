@@ -2,34 +2,49 @@ import csv
 import re
 from movie import *
 from user import *
-#================================================
-# with open("movie_data/u.user.csv") as w:
-#       word_dictionary = w.read()
-#       word_dictionary = word_dictionary.split()
+
+"""
+[]Find all ratings for a movie by id
+[x]Find the average rating for a movie by id
+[]Find the name of a movie by id
+[x]Find all ratings for a user
+
+"""
+def user_ratings():
+    user_id = input("Enter a user id to find that user's reviews\n")
+    user = User(user_id)
+    review_list = user.user_rating_list()
+    print("Here all all movie reviews of user id: {}".format(user_id))
+    user_reviews = user.movie_ratings(review_list)
+    # print("Here are all movies reviewd by user {}: {}".format(user_id, user_reviews))
 
 
-# for i in word_dictionary:
-#   if "technician" in i:
-#       i = re.sub(r'\|'," ",i)
-#       i = i.split()
-#       print(i)
-# print(word_dictionary)
-# =====================takes in move data===========================
-# array = []
-# with open("movie_data/u.data.csv") as w:
-#     movie_data = w.readlines()
-# for i in movie_data:
-#     i = re.sub(r'[\\tn]', " ", i)
-#     i = i.split()
-#     array.append(i)
-#
-#
-# for i in array:
-#     if i[0] == '1':
-#         print(i)
-input_id = input("Enter a user Id\n")
-a_user = User(input_id)
-user_list = a_user.user_rating_list()
-print(a_user.find_user_ratings(user_list))
+def movie_ratings():
 
-    # movie_data = movie_data.split()
+def average_rating():
+    movie_id = input("Enter Movie ID\n")
+    movie = Movie(movie_id)
+    review_list = movie.user_rating_list()
+    average = movie.average_review(review_list)
+    print("The average review of your movie is {}/5 stars".format(average))
+
+
+
+def main():
+    choice = input("""
+    Welcome to the Move Review Database(1998). What Would you like to do?
+
+    [1]-- Find The Average Review of a Movie
+    [2]-- Find All Reviews From a User
+    """)
+
+    if choice == '1':
+        average_rating()
+    elif choice == '2':
+        user_ratings()
+    else:
+        print("Goodbye")
+
+
+
+main()

@@ -23,9 +23,8 @@ class User:
         return array
 
 
-    def find_user_ratings(self, user_ratings):
+    def movie_ratings(self, user_ratings):
         array = []
         for i in user_ratings:
             if i[0] == self.user_id:
-                array.append(i)
-        return array
+                print("Movie:{},  Rating:{}".format(i[1], i[2]))
