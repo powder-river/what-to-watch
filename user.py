@@ -1,3 +1,6 @@
+import re
+import csv
+
 class User:
     def __init__(self,user_id):
         self.user_id = user_id
@@ -7,5 +10,22 @@ class User:
             user_id:stuff,
             user_id:stuff,
         }
+        well, maybe......
     """
-print("test")
+    def user_rating_list(self):
+        array = []
+        with open("movie_data/u.data.csv") as w:
+            movie_data = w.readlines()
+        for i in movie_data:
+            i = re.sub(r'[\\tn]', " ", i)
+            i = i.split()
+            array.append(i)
+        return array
+
+
+    def find_user_ratings(self, user_ratings):
+        array = []
+        for i in user_ratings:
+            if i[0] == self.user_id:
+                array.append(i)
+        return array

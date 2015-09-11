@@ -14,13 +14,13 @@ def test_movie_class():
 
 
 def test_get_movie_id
-    
+
 
 
 def test_user_class():
-    bob = User(1)
+    a_user = User("1")
     assert User
-    assert bob.user_id == 2
+    assert a_user.get_reviews() == ??
 
 
 def test_rating_class():
