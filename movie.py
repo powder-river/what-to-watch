@@ -5,6 +5,7 @@ class Movie:
     def __init__(self,title):
         self.title = title
 
+
     def movie_titles(self):
         array = []
         film_titles = []

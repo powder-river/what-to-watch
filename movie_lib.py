@@ -4,9 +4,9 @@ from movie import *
 from user import *
 
 """
-[]Find all ratings for a movie by id
+[x]Find all ratings for a movie by id
 [x]Find the average rating for a movie by id
-[]Find the name of a movie by id
+[x]Find the name of a movie by id
 [x]Find all ratings for a user
 
 """
